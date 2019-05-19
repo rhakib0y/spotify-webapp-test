@@ -79,7 +79,6 @@ class Login extends Component {
   }
 
   render() {
-    // onClick={this.handleLogin}
     return (
       <div className='centerpage'>
       <span> &nbsp; </span> 
@@ -90,6 +89,7 @@ class Login extends Component {
             <FontAwesomeIcon  icon={faSpotify} 
             size="3x" className='iconButton'
             onClick={this.handleLogin}
+            title='Click Spotify Logo to Login'
             />
           </div>
         </StyledPaper>

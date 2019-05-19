@@ -6,9 +6,6 @@ import Login from '../components/content/login';
 const history = require("history");
 
 class AppRouter extends Component {
-    constructor(props){
-      super(props);
-    }
 
   render() {
     const pathname = document.location.pathname;

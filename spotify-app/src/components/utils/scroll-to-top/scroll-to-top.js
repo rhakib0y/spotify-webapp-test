@@ -14,14 +14,15 @@ class ScrollToTop extends React.Component {
     if (window.pageYOffset === 0) {
         clearInterval(this.state.intervalId);
     }
-    console.log(window.pageYOffset);
+    // console.log(window.pageYOffset);
     // window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
     window.scroll(0, 0);
   }
   
   scrollToTop() {
-    let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
-    this.setState({ intervalId: intervalId });
+    // let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
+    // this.setState({ intervalId: intervalId });
+    this.scrollStep();
   }
   
   render () {

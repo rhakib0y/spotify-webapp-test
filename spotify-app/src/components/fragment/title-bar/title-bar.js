@@ -8,7 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function TitleText(props){
 	return (<h3><p>
-	 <FontAwesomeIcon icon={faSpotify} size="2x" style={{color:'black'}} /> 
+	 <FontAwesomeIcon icon={faSpotify} size="2x" 
+	 style={{color:'black'}} title="Spotify Auth: Implicit Grant"/> 
 	 <span> &nbsp;</span>
 		{props.title}</p></h3>);
 }
