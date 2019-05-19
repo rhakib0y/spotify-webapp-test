@@ -1,0 +1,31 @@
+
+.centerpage{
+  display: grid;
+  grid-template-columns:auto 10px auto;
+  place-items: center;
+  height: 100vh;
+ 
+}
+
+.centerpage > div{
+    text-align: center;
+    color: black;
+    background: white;
+    width: 300px !important;
+    border: 2px;
+    border-color: #828282;
+    border-style: solid;
+    height: 40px;
+  }
+
+.iconButton{
+    color: #84bd00;
+    cursor: pointer;
+}
+
+.iconButton:hover {border: gray; }
+
+.iconButton:active {
+    border: gray;
+    transform: translateX(10px);
+  }
