@@ -6,8 +6,15 @@ import Login from '../components/content/login';
 const history = require("history");
 
 class AppRouter extends Component {
+    constructor(props){
+      super(props);
+    }
 
   render() {
+    const pathname = document.location.pathname;
+    if(pathname === '/'){
+      document.location.replace('http://localhost:3000/login');
+    }
     return (
       <Router history={history}>
           <Route path="/app" exact component={App} />
