@@ -37,7 +37,7 @@ function AlbumCard(props) {
 				{props.albumname}
           </Typography>
            <Typography variant="caption"  align="left">
-         	 	{props.artistname===undefined ? '': props.artistname.map(name=> (name.name))}
+         	 	{props.artistname===undefined ? '': props.artistname.map(name=> ((name.name).concat('\n')))}
         	</Typography>
         	<br />
         	<Typography variant="caption" gutterBottom align="left">
