@@ -10,9 +10,10 @@ const styles = {
   root: {
     // padding: '2px 4px 10x 20x',
     display: 'flex',
-    width: '100',
+    width: '100%',
     justifyContent: 'center',
-    height: '130%'
+    height:80,
+    textAlign: 'center'
   },
   input: {
     marginLeft: 20,

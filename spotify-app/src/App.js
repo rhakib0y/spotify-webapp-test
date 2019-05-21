@@ -54,11 +54,6 @@ class App extends Component {
     this.screenFocus = React.createRef()
   }
 
-  componentDidUpdate () {
-    //console.log(this.screenFocus);
-    // console.log(this.screenFocus.current.offsetTop);
-  }
-
   componentWillMount = () => {
      this.handleTokenFromUrl(this.props.location);
     }
@@ -80,6 +75,19 @@ class App extends Component {
     const _token = this.state.api.token.access_token;
     const _url = this.getSearchArtistUrl(this.state.searchArtistKeyword);
     this.loadArtistList(_url, _token);    
+  }
+  componentDidUpdate(props) {
+    if(!this.state.isAuthenticated)
+    {
+      // alert('Session expired.');
+      //  document.location.replace('http://localhost:3000/login');
+      }
+  }
+
+  handleIsAuthenticated(isLogin){
+    this.setState({
+      isAuthenticated: isLogin
+    });
   }
 
   //to obtain token value from URL
@@ -108,7 +116,8 @@ class App extends Component {
             api: {
               token: tokenObj
             }
-           }); 
+           });
+           this.handleIsAuthenticated(true);
       }
       if(tokenObj)
       {
@@ -180,6 +189,7 @@ class App extends Component {
                 error: result.error,
                 errorMsg: result.error.status +' - '+result.error.message
               });
+              this.handleIsAuthenticated(false);
             } else {
               this.setState({
                 isLoaded: true,
@@ -218,6 +228,7 @@ class App extends Component {
                 error: result.error,
                 errorMsg: result.error.status +' - '+result.error.message
               });
+              this.handleIsAuthenticated(false);
             } else {
               this.setState({
                 isAlbumLoaded: true,

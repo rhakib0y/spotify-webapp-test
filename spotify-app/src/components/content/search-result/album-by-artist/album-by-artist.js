@@ -18,8 +18,8 @@ const styles = theme => ({
     height: '100%',
   },
   media: {
+    width : '100%',
     height: '20em',
-    width : '20em'
   }
 });
 

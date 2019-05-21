@@ -14,16 +14,16 @@ export const GetArtistSearchBar = (props) =>  {
   let artistArr = props.artistObj.items;
   return (
     <div className="App-body-full">
-      <Grid container spacing={40} justify="center" alignItems="stretch">
-        <Grid item xs={3} zeroMinWidth >  <Typography noWrap />   </Grid>
-        <Grid item xs={6} zeroMinWidth >
+      <Grid container spacing={16} justify="center" direction="row" alignItems="center">
+        <Grid item xs={12} sm={3}>  <Typography noWrap />   </Grid>
+        <Grid item xs={12} sm={6}  >
          <SearchBar onInvokeSearch={props.onInvokeSearch} searchKeyword = {props.searchKeyword}/>
          </Grid>
-        <Grid item xs={3} zeroMinWidth>  <Typography noWrap />   </Grid>
-        <Grid item xs={12} zeroMinWidth>  <Typography noWrap />   </Grid>
+        <Grid item xs={12} sm={3} >  <Typography noWrap />   </Grid>
+        <Grid item xs={12} sm={12} >  <Typography noWrap />   </Grid>
         { artistArr && artistArr.length < 1? <h3> <span> &nbsp; </span> </h3>
         :artistArr.map(artist => (
-          <Grid item xs={3} sm={3} key={artist.id} >
+          <Grid item xs={12} sm={3} key={artist.id} >
             <AlbumByArtist followers={artist.followers.total}
               artistId = {artist.id} 
               artistname={artist.name}
@@ -46,12 +46,12 @@ export const GetArtistNameHeading =  (props) => {
   return (
     <div className="name-heading">
       <Grid container spacing={40}>
-        <Grid item xs={4} >
+        <Grid item xs={6} sm={4} >
           <ArtistDetails artistName={artist.name}
             type={artistArr.album_type} /> 
              </Grid>
-        <Grid item xs={7} zeroMinWidth>  <Typography noWrap />   </Grid>
-        <Grid item xs={1} zeroMinWidth> <ScrollToTop scrollStepInPx="700" delayInMs="300"/>   </Grid>
+        <Grid item xs={5} sm={7} >  <Typography noWrap />   </Grid>
+        <Grid item xs={1} sm={1} > <ScrollToTop scrollStepInPx="700" delayInMs="300"/>   </Grid>
       </Grid>
     </div>
   );
@@ -62,9 +62,9 @@ export const GetAlbumCards =  (props) => {
   let artistArr = albumObj[0];
   return (
     <div className="App-body-full" >
-      <Grid container spacing={40} alignItems="stretch">
+      <Grid container spacing={16} justify="center" direction="row" alignItems="center">
         {albumObj.map(album => (
-          <Grid item xs={3} sm={3} key={album.id} >
+          <Grid item xs={12} sm={3} key={album.id} >
             <AlbumCard albumname={album.name}
               artistId = {album.id} 
               artistname={artistArr.artists} date={album.release_date}
